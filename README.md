@@ -15,7 +15,7 @@
 
 1. **Clona el repositorio** en la carpeta que quieras (la ruta no importa):
    ```powershell
-   git clone https://github.com/<usuario>/Proyecto_Dota2_Meta.git
+   git clone https://github.com/aslenwis/Proyecto_Dota2_Meta.git
    cd Proyecto_Dota2_Meta
    ```
 2. **Crea un entorno virtual nuevo** e instala las dependencias:
