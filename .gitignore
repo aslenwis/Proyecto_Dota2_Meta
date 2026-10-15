@@ -1,0 +1,15 @@
+# Entornos y caché
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Datos: se regeneran con la descarga reproducible (sección 3 del notebook)
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/*/.gitkeep
+
+# Credenciales: NUNCA subir
+kaggle.json

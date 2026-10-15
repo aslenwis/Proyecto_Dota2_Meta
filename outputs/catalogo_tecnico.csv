@@ -1,0 +1,56 @@
+﻿tabla,columna,tipo_pandas,nulos_pct,unicos,ejemplo
+main_metadata,version,float64,0.0,2,21.0
+main_metadata,match_id,int64,0.0,44988,8107483721
+main_metadata,leagueid,int64,0.0,241,17163
+main_metadata,start_date_time,str,0.0,44910,2025-01-01 00:09:05
+main_metadata,duration,int64,0.0,3539,2059
+main_metadata,series_id,float64,16.74,17821,938494.0
+main_metadata,series_type,float64,16.74,4,1.0
+main_metadata,cluster,int64,0.0,40,274
+main_metadata,replay_salt,float64,16.74,37458,1271852253.0
+main_metadata,radiant_win,bool,0.0,2,False
+main_metadata,pre_game_duration,int64,0.0,1,90
+main_metadata,match_seq_num,int64,0.0,44988,6817296376
+main_metadata,tower_status_radiant,str,0.0,134,'0000000100000110'
+main_metadata,tower_status_dire,str,0.0,136,'0000011100100100'
+main_metadata,barracks_status_radiant,str,0.0,55,'00110111'
+main_metadata,barracks_status_dire,str,0.0,55,'00111111'
+main_metadata,first_blood_time,int64,0.0,688,87
+main_metadata,lobby_type,int64,0.0,1,1
+main_metadata,human_players,int64,0.0,1,10
+main_metadata,game_mode,int64,0.0,3,2
+main_metadata,flags,int64,0.0,6,1
+main_metadata,engine,int64,0.0,1,1
+main_metadata,radiant_score,int64,0.0,89,22
+main_metadata,dire_score,int64,0.0,91,31
+main_metadata,radiant_team_id,float64,3.98,2439,9025669.0
+main_metadata,radiant_logo,float64,18.54,2304,7416500508731896.0
+main_metadata,radiant_team_complete,float64,3.98,2,1.0
+main_metadata,dire_team_id,float64,4.38,2629,8849817.0
+main_metadata,dire_logo,float64,18.16,2439,6290173590737323.0
+main_metadata,dire_team_complete,float64,4.38,2,1.0
+main_metadata,radiant_captain,float64,1.94,3283,315850275.0
+main_metadata,dire_captain,float64,1.94,3760,188408746.0
+main_metadata,patch,int64,0.0,5,56
+main_metadata,region,float64,1.87,16,3.0
+main_metadata,throw,float64,47.91,7758,5301.0
+main_metadata,loss,float64,47.91,15679,3160.0
+main_metadata,comeback,float64,52.09,7632,52.0
+main_metadata,stomp,float64,52.09,14899,9324.0
+main_metadata,replay_url,str,0.0,44988,http://replay274.valve.net/570/8107483721_1271852253.dem.bz2
+main_metadata,periodo_origen,str,0.0,10,2025
+main_metadata,fecha,datetime64[us],0.0,44910,2025-01-01 00:09:05
+main_metadata,mes,string,0.0,21,2025-01
+main_metadata,duracion_min,float64,0.0,3539,34.31666666666667
+main_metadata,primera_sangre_min,float64,0.0,688,1.45
+main_metadata,ganador,str,0.0,2,Dire
+main_metadata,modo_juego,str,0.0,3,Captains Mode
+main_metadata,tipo_lobby,str,0.0,1,Práctica (torneo privado)
+main_metadata,parche,category,0.0,5,7.37
+picks_bans,is_pick,bool,0.0,2,False
+picks_bans,hero_id,int64,0.0,127,110
+picks_bans,team,int64,0.0,2,0
+picks_bans,order,int64,0.0,24,0
+picks_bans,match_id,int64,0.0,44359,8107483721
+picks_bans,leagueid,int64,0.0,235,17163
+picks_bans,periodo_origen,str,0.0,10,2025

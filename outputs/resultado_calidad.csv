@@ -1,0 +1,20 @@
+﻿regla,dimension,tabla,cumple,total,incumplimientos,cumplimiento_pct,impacto,responsable
+mes con al menos 50 % de la mediana mensual,Oportunidad,main_metadata (por mes),17,21,4,80.95,"Un mes incompleto (p. ej. sep-2026, que llega solo al día 13) pesa poco y no representa el mes entero",Mantenedor del dataset (próxima actualización) / equipo (advertirlo)
+equipos identificados (Radiant y Dire),Completitud,main_metadata,42381,44988,2607,94.21,"No afecta al draft (los picks existen igual), pero impide analizar el meta por equipo",Mantenedor del dataset / OpenDota (registro de equipos)
+modo de juego = Captains Mode,Validez,main_metadata,44117,44988,871,98.06,En otros modos (p. ej. All Pick) no hay bans de capitanes: sus picks no reflejan prioridades de draft,Equipo de análisis (excluir en Silver con regla crítica)
+10 picks por partida (5 por lado),Consistencia,main_metadata ↔ picks_bans,44261,44988,727,98.38,Un draft incompleto o ausente subestima el pick rate de los héroes de esa partida,Mantenedor del dataset / equipo (excluir en Silver)
+duración entre 10 y 120 min,Plausibilidad,main_metadata,44929,44988,59,99.87,Partidas extremadamente cortas (rendición o abandono) o largas pueden no reflejar un draft jugado con normalidad,Equipo de análisis (marcar en Silver; no borrar)
+match_id único en main_metadata,Unicidad,main_metadata,44988,44988,0,100.0,Una partida repetida cuenta doble en pick rate y win rate,Equipo de análisis (deduplicar en Silver)
+hero_id no nulo en picks_bans,Completitud,picks_bans,1062700,1062700,0,100.0,"Una acción sin héroe no puede contarse en pick rate, ban rate ni contest rate",Mantenedor del dataset
+"(match_id, order) único en picks_bans",Unicidad,picks_bans,1062700,1062700,0,100.0,Un turno repetido duplica un pick o un ban e infla las tasas de ese héroe,Equipo de análisis (deduplicar en Silver)
+patch existe en el catálogo de parches,Validez,main_metadata,44988,44988,0,100.0,"Sin versión legible, la partida no entra en ningún grupo 'parche a parche'",Equipo de análisis (actualizar el catálogo de OpenDota)
+hero_id existe en el catálogo de héroes,Validez,picks_bans,1062700,1062700,0,100.0,Un héroe desconocido no tiene nombre: no se puede mostrar ni comparar entre parches,Equipo de análisis (actualizar el catálogo de OpenDota)
+match_id de picks_bans existe en main_metadata,Consistencia,picks_bans ↔ main_metadata,1062700,1062700,0,100.0,Acciones 'huérfanas' no tienen parche ni resultado: no pueden entrar al análisis,Mantenedor del dataset
+fecha convertible,Validez,main_metadata,44988,44988,0,100.0,Sin fecha no se puede ubicar la partida en un mes ni verificar su parche,Mantenedor del dataset
+fecha dentro de su carpeta de origen,Consistencia,main_metadata,44988,44988,0,100.0,Una partida en la carpeta equivocada se cuenta en el mes incorrecto y puede duplicarse entre meses,Mantenedor del dataset
+fecha posterior al lanzamiento del parche,Consistencia,main_metadata ↔ catálogo de parches,44988,44988,0,100.0,Una partida asignada a un parche que aún no existía distorsiona la comparación parche a parche,Mantenedor del dataset / OpenDota
+radiant_score >= suma de kills de Radiant (2026),Consistencia,main_metadata ↔ players,14367,14367,0,100.0,"Si los jugadores suman MÁS kills que el marcador, alguna de las dos tablas está mal registrada",Mantenedor del dataset
+patch no nulo,Completitud,main_metadata,44988,44988,0,100.0,"Sin parche, la partida no puede asignarse a una versión: queda fuera de la comparación parche a parche",Mantenedor del dataset (o el equipo: imputar por fecha de lanzamiento)
+human_players = 10,Plausibilidad,main_metadata,44988,44988,0,100.0,Una partida profesional con menos de 10 jugadores no es comparable con el resto,Mantenedor del dataset
+primera sangre entre 0 y la duración,Plausibilidad,main_metadata,44988,44988,0,100.0,Un tiempo de primera sangre fuera de la partida indica un registro corrupto,Mantenedor del dataset
+parche con al menos 1000 partidas,Oportunidad,main_metadata (por parche),5,5,0,100.0,Un parche con pocas partidas (p. ej. si solo cae al inicio o al final del período) da métricas poco estables,Equipo de análisis (advertirlo al comparar)

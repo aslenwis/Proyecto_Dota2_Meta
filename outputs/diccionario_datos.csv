@@ -1,0 +1,17 @@
+﻿tabla,columna,nombre_simple,que_significa,ejemplo,tipo_escala,unidad_dominio,importancia
+main_metadata,match_id,Código de partida,Identificador único de cada partida,8923283343,Identificador,"Entero positivo, único",Une todas las tablas
+main_metadata,start_date_time,Fecha y hora,Momento en que empezó la partida,2026-08-01 00:18:32,Temporal,Fecha válida dentro del período,Asigna cada partida a un mes y a un parche
+main_metadata,duration,Duración,Cuánto duró la partida,2743 (≈ 46 min),Numérica continua,"Segundos, > 0",Describe el ritmo del meta
+main_metadata,radiant_win,¿Ganó Radiant?,True si ganó el lado Radiant; False si ganó Dire,True,Booleana,True / False,Resultado; base del win rate
+main_metadata,patch,Parche,Versión del juego vigente (código interno),60 (= 7.41),Categórica ordinal,Catálogo de parches de OpenDota,Eje principal: 'parche a parche'
+main_metadata,game_mode,Modo de draft,Formato de selección de héroes,2 (= Captains Mode),Categórica codificada,Constantes de OpenDota,Solo Captains Mode es comparable
+main_metadata,leagueid,Liga / torneo,Torneo al que pertenece la partida,20030,Identificador,Entero positivo,Permite ver qué ligas pesan más
+main_metadata,human_players,Jugadores humanos,Cuántas personas jugaron,10,Numérica discreta,Debe ser 10,Detecta partidas incompletas
+main_metadata,radiant_score / dire_score,Eliminaciones,Kills totales de cada lado,37 / 30,Numérica discreta,≥ 0,Consistencia con players
+picks_bans,is_pick,¿Elegido o prohibido?,True = pick (elegido); False = ban (prohibido),True,Booleana,True / False,Separa picks de bans
+picks_bans,hero_id,Héroe,Héroe elegido o prohibido en esa acción,2 (= Axe),Categórica (código),Catálogo de héroes (127),Unidad del meta: todas las tasas se calculan por héroe
+picks_bans,team,Lado,"Equipo que hizo la acción: 0 = Radiant, 1 = Dire (verificado con players: 100 %)",0,Categórica binaria,0 / 1,Permite saber si el equipo que eligió al héroe ganó
+picks_bans,order,Turno del draft,Posición de la acción dentro del draft (0 = la primera),7,Ordinal,0 a 23 en un draft completo,Clave junto a match_id; muestra qué se decide primero
+derivada,parche,Parche legible,"Versión del juego, p. ej. 7.41",7.41,Categórica ordinal,Catálogo de parches,Etiqueta de todos los gráficos
+derivada,duracion_min,Duración (min),duration / 60,45.7,Numérica continua,"Minutos, > 0",Ritmo del meta; base de la regla de plausibilidad
+derivada,ganador,Lado ganador,radiant_win traducido a texto,Radiant,Categórica binaria,Radiant / Dire,Etiqueta legible del resultado
