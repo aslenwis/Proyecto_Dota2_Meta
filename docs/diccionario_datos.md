@@ -52,3 +52,17 @@ Columnas confirmadas: `is_pick`, `hero_id`, `team`, `order`, `match_id`, `league
 | modo_juego | Modo legible | `game_mode` → nombre | Captains Mode |
 | heroe | Nombre del héroe | `hero_id` → catálogo de OpenDota | Anti-Mage |
 | gano | ¿Ganó quien eligió? | lado de la acción + `radiant_win` | True |
+
+## Capa Gold (`data/gold/`) — tablas resumen para el dashboard
+
+| Tabla | 1 fila = | Columnas | Significado de las columnas nuevas |
+|---|---|---|---|
+| resumen_parche.csv | un parche | parche, partidas, heroes_efectivos, cuota_top10_pct, gini, desv_win_rate, pct_heroes_45_55, radiant_win_pct, margen_95_pts, heroes_contest_30, heroe_mas_elegido, pick_rate_max_pct, heroe_mas_disputado, contest_rate_max_pct | heroes_contest_30 = héroes elegidos o prohibidos en al menos el 30 % de las partidas |
+| diversidad_por_parche.csv | un parche | partidas, picks, heroes_distintos, cobertura_pct, cuota_top10_pct, entropia_norm, heroes_efectivos, gini | Ver sección 11 del notebook |
+| equilibrio_por_parche.csv | un parche | heroes_con_muestra, desv_win_rate, win_rate_min, win_rate_max, pct_heroes_45_55 | Solo héroes con al menos 30 picks |
+| lados_por_parche.csv | un parche | partidas, radiant_win_pct, margen_95_pts | margen_95_pts = 1.96 · √(p(1−p)/n), en puntos porcentuales |
+| tasas_heroe_parche.csv | un héroe en un parche | hero_id, heroe, picks, bans, victorias, partidas_parche, pick_rate_pct, ban_rate_pct, contest_rate_pct, win_rate_pct, perfil, muestra_suficiente | perfil = "para jugar" si pick rate ≥ ban rate, si no "para negar"; muestra_suficiente = picks ≥ 30 |
+| prioridad_draft_por_parche.csv | un héroe del top 15 de un parche | las de tasas_heroe_parche + ranking | ranking = posición por contest rate dentro del parche |
+| prioridad_draft_7.41.csv | un héroe del top 15 de 7.41 | heroe, picks, bans, pick/ban/contest/win rate | Tabla de la sección 13 |
+
+La columna `parche` se guarda como **texto** ("7.40"), no como número, para que no se convierta en 7.4 al leer el CSV.

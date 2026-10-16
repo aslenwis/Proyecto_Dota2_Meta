@@ -69,12 +69,12 @@ Proyecto_Dota2_Meta/
 │   ├── ingesta.py     # Bronze: descarga Kaggle/OpenDota, manifiesto SHA-256, carga
 │   ├── calidad.py     # reglas de calidad DAMA (6 dimensiones)
 │   └── metricas.py    # diversidad, equilibrio y prioridad de draft
-├── data/bronze | silver | gold      # medallion (no se sube a git)
+├── data/bronze | silver | gold      # medallion (no se sube a git; Gold = 7 tablas resumen)
 ├── docs/
 │   ├── glosario_dota2.md    # para la audiencia que no juega
 │   └── diccionario_datos.md # diccionario con columnas reales
 ├── outputs/          # manifiesto, catálogo técnico, diccionario, calidad, rechazados
-└── reports/figures/  # gráficos para la exposición
+└── reports/figures/  # gráficos para la exposición y dashboard_gold_<parche>.png (sección 14)
 ```
 
 ## Fuentes
